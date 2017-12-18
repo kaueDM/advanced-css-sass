@@ -8,11 +8,17 @@
 @import './base/utilities';
 
 @import './components/button';
+@import './components/bg-video';
 @import './components/card';
 @import './components/composition';
+@import './components/form';
 @import './components/feature-box';
+@import './components/popup';
+@import './components/story';
 
+@import './layout/navigation';
 @import './layout/header';
+@import './layout/footer';
 @import './layout/grid';
 
 @import './pages/home';

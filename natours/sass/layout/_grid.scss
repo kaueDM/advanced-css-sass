@@ -3,7 +3,16 @@
     margin: 0 auto;
     
     &:not(:last-child) {
-        margin-bottom: $gutter-vertical;        
+        margin-bottom: $gutter-vertical;
+        
+        @include respond(tablet-portrait) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tablet-portrait) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
@@ -13,6 +22,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tablet-portrait) {
+                margin-right: 0; //removes gutters
+                margin-bottom: $gutter-vertical-small; //adds an horizontal gutter
+            }
+        }   
+
+        @include respond(tablet-portrait) {
+            width: 100% !important; //transform each block into an entire row
         }
     }
 

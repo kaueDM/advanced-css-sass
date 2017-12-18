@@ -5,3 +5,51 @@
         clear: both;
     }
 }
+
+/*
+
+    Media queries
+
+    IMPORTANT: REMs doesn't work in media queries. Use EM instead.
+    1em = 16px;
+    
+    Breakpoints:
+
+    0 - 600px = Phone;
+    601 - 900px = Tablet (portrait);
+    901 - 1200px = Tablet (landscape);
+    1201 - 1800px = Desktop (default code);
+    1801px + = Desktop (large);
+
+    $breakpoint variable options:
+    * phone;
+    * tablet-portrait;
+    * tablet-landscape;
+    * desktop-large;
+
+    Order to apply:
+
+    * Base + Typography;
+    * Header, Footer, Navigation and Grid;
+    * Pages;
+    *Components;
+
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone { 
+        @media (max-width: 37.5em) { @content; } //600px / 16px (1em) = 37.5
+    }
+
+    @if $breakpoint == tablet-portrait { 
+        @media (max-width: 56.25em) { @content; } //900px / 16px (1em) = 56.25
+    }
+
+    @if $breakpoint == tablet-landscape { 
+        @media (max-width: 75em) { @content; } //1200px / 16px (1em) = 75
+    }
+
+    @if $breakpoint == desktop-large { 
+        @media (min-width: 112.5em) { @content; } //1800px / 16px (1em) = 112.5
+    }
+}
+

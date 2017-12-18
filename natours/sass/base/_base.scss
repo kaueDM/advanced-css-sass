@@ -7,10 +7,26 @@
 }
 
 html {
-    font-size: 62.5%; /* .625 * 16(default browser font size) = 10px */
+    font-size: 62.5%; // .625 * 16(default browser font size) = 10px 
+
+    //MAX WIDTH QUERIES - BIGGER TO LESSER
+
+    //width =< 1200?
+    @include respond(tablet-landscape) {
+        font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%;
+    }
+
+    //width =< 900?
+    @include respond(tablet-portrait) { //applies to phone too
+        font-size: 50%; //1rem = 8px, 8/16 = 50%;
+    }
+
+    //width >= 1800?
+    @include respond(desktop-large) {
+        font-size: 75%; //1rem = 12px, 12/16 = 75%;
+    }
 }
 
 body {
-    // padding: 3rem; //white frame around the entire page
     box-sizing: border-box;
 }
